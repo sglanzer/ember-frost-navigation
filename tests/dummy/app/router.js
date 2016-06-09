@@ -12,6 +12,11 @@ Router.map(function () {
     console.log(item)
     addRoute.call(this, item)
   })
+  this.modal('nav-modal', {
+    withParams: 'activeCategory',
+    controller: 'demo/redesign',
+    dialogClass: 'frost-navigation-modal'
+  })
 })
 
 export default Router
