@@ -18,13 +18,18 @@
         <div class='body'>
           {{#each section.routes as |route|}}
             {{log route.icon}}
-            {{nav-route 
-              description=route.description
-              icon=route.icon
-              pack='dummy'
-              name=route.name 
-            }}
+            <div class='nav-item'>
+            {{#frost-link route.route}}
+              {{nav-route
+                description=route.description
+                icon=route.icon
+                pack='dummy'
+                name=route.name
+              }}
+            {{/frost-link}}
+          </div>
           {{/each}}
+
         </div>
       </div>
     {{/each}}

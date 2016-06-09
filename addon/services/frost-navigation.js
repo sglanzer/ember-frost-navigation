@@ -1,7 +1,26 @@
-import Ember from 'ember';
+import Ember from 'ember'
 
 export default Ember.Service.extend({
-  activeCategory: 'network',
+  registerCategory (name, columns) {
+    return !!this.categories.push({
+      name,
+      columns
+    })
+  },
+  registerApp (categoryName, columnTitle, icon, name, description, path) {
+    let _category = this.categories.find(e => e.name === categoryName)
+    Ember.assert(`Category ${_category} does not exist!`, !_category)
+    let _column = _category.columns.find(e => e.title === columnTitle)
+    Ember.assert(`Column ${_column} does not exist!`, !_category)
+
+    return !!_column.push({
+      icon,
+      name,
+      description,
+      path
+    })
+  },
+  activeCategory: null,
   categories: [
     {
       name: 'Network',
@@ -14,12 +33,14 @@ export default Ember.Service.extend({
               {
                 icon: 'sample',
                 name: 'Network elements',
-                description: 'Description'
+                description: 'Description',
+                route: 'demo.redesign.nested'
               },
               {
                 icon: 'sample',
                 name: 'Equipment',
-                description: 'Description'
+                description: 'Description',
+                route: 'demo.redesign'
               },
               {
                 icon: 'sample',
@@ -112,4 +133,4 @@ export default Ember.Service.extend({
       columns: []
     }
   ]
-});
+})
