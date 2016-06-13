@@ -10,13 +10,15 @@ Router.map(function () {
   routerConfig.routes.forEach((item) => {
     addRoute.call(this, item)
   })
-  routerConfig.categories.forEach((category) => {
-    this.nav(category.name, {
-      navType: 'category',
-      type: 'route',
-      columns: category.columns,
-      controller: 'demo'
-    })
+
+  this.route('demo', function() {
+    routerConfig.categories.forEach((category) => {
+        this.nav(category.name, {
+          navType: 'category',
+          type: 'route',
+          columns: category.columns
+        })
+      })
   })
 })
 

@@ -1,5 +1,4 @@
 module.exports = {
-  rootURL: 'demo',
   categories: [{
     name: 'Network',
     columns: [
