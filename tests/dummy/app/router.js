@@ -33,7 +33,6 @@ Router.map(function () {
   routerConfig.routes.forEach((item) => {
     addRoute.call(this, item)
   })
-
 })
 
 export default Router

@@ -61,7 +61,6 @@ export default Ember.Service.extend({
       this.set('_activeCategory', null)
     }
     _actionHandler(item)
-
   },
   _activeCategory: null,
   categories: Ember.A()

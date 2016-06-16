@@ -2,10 +2,6 @@ import Ember from 'ember'
 import layout from '../templates/components/nav-app-bar'
 import transitions from 'ember-frost-navigation/transitions/frost-navigation'
 
-const {
-  getOwner
-} = Ember
-
 export default Ember.Component.extend({
   classNames: ['nav-app-bar'],
   layout,
