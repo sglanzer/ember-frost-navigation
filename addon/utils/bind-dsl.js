@@ -26,7 +26,7 @@ export default {
           controller: name,
           actions: config.actions
         })
-        if(config.model)
+        if (config.model)
           config.model.forEach(function (e) {
             console.log(e)
             navigation._registerCategory(e)
@@ -72,7 +72,7 @@ export default {
     /**
      * Creates a column that performs under the context of a navigation bar.
      */
-    obj.column   = function () {
+    obj.column = function () {
       let args = argify(...arguments)
       let self = this
       Ember.assert(A.column, self.parent.type === 'category')
@@ -112,7 +112,7 @@ export default {
     /**
      * Creates a section under a given column
      */
-    obj.section  = function () {
+    obj.section = function () {
       let args = argify(...arguments)
       let self = this
       Ember.assert(A.section, self.parent.type === 'column')
