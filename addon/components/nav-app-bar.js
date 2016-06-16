@@ -2,10 +2,6 @@ import Ember from 'ember'
 import layout from '../templates/components/nav-app-bar'
 import transitions from 'ember-frost-navigation/transitions/frost-navigation'
 
-const {
-  getOwner
-} = Ember
-
 export default Ember.Component.extend({
   classNames: ['nav-app-bar'],
   layout,
@@ -13,7 +9,7 @@ export default Ember.Component.extend({
   nav: Ember.inject.service('frost-navigation'),
   transitionService: Ember.inject.service('liquid-fire-transitions'),
   categories: Ember.computed.alias('nav.categories'),
-  registerTransitions: Ember.on('init', function() {
+  registerTransitions: Ember.on('init', function () {
     let navigationService = this.get('nav')
     let transitionService = this.get('transitionService')
 
